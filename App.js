@@ -32,7 +32,14 @@ export default class App extends Component{
 
   return (
 
-        <CheckBox  onPress = {()=>{ this.setState({isChecked:!this.state.isChecked})}} isChecked = {this.state.isChecked} size = {20} tickSize = {15} tickColor = 'black' style = {{borderColor: 'black'}} opacity = {0}/>
+        <CheckBox
+            onPress = {()=>{ this.setState({isChecked:!this.state.isChecked})}}
+            isChecked = {this.state.isChecked}
+            size = {20}
+            tickSize = {15}
+            tickColor = 'black'
+            style = {{borderColor: 'black'}}
+            opacity = {0}/>
 
   );
 };
