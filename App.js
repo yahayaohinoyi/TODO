@@ -6,7 +6,7 @@
  * @flow
  */
 
-import React from 'react';
+import React,{Component} from 'react';
 import {
   SafeAreaView,
   TouchableOpacity,
@@ -21,15 +21,20 @@ import {
 import CheckBox from './Components/checkbox'
 
 
-const App: () => React$Node = () => {
+export default class App extends Component{
+  constructor(props){
+    super(props);
+    this.state = {
+      isChecked : false
+    }
+  }
+  render(){
+
   return (
-    <>
-      <SafeAreaView>
-        <CheckBox  size = {20} tickSize = {15} tickColor = 'red' style = {{borderColor: 'red'}} opacity = {0.5}/>
-      </SafeAreaView>
-    </>
+
+        <CheckBox  onPress = {()=>{ this.setState({isChecked:!this.state.isChecked})}} isChecked = {this.state.isChecked} size = {20} tickSize = {15} tickColor = 'black' style = {{borderColor: 'black'}} opacity = {0}/>
+
   );
 };
+}
 
-
-export default App;

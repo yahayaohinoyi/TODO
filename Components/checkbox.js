@@ -18,18 +18,14 @@ export default class CheckBox extends Component{
 
 
     }
-    onClickCheckBox = ()=>{
-        this.setState({
-            isChecked:!this.state.isChecked,
-        })
-    };
+
     render(){
-        const {size, style, opacity, tickSize, tickColor} = this.props;
+        const {size, style, opacity, tickSize, tickColor,onPress, isChecked} = this.props;
 
         return(
-            <TouchableOpacity onPress = {this.onClickCheckBox} activeOpacity = {opacity}>
+            <TouchableOpacity onPress = {onPress} activeOpacity = {opacity}>
                 <View style = {[styles.checkBoxStyle,{height: size, width: size, alignItems:'center',justifyContent:'center'},style ]}>
-                    {this.state.isChecked? <Icon name="check" size={tickSize} color= {tickColor} />:null}
+                    {isChecked? <Icon name="check" size={tickSize} color= {tickColor} />:null}
                 </View>
 
             </TouchableOpacity>
